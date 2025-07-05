@@ -1,0 +1,15 @@
+:root {
+  --color-primary: #87addec9;
+  --color-bg: #f4f4f4;
+  --color-text: #222;
+  --border-radius: 8px;
+  --font-main: 'Roboto', sans-serif;
+    --color-primary-dark: #417cbf;
+}
+
+body {
+  font-family: var(--font-main);
+  background: var(--color-bg);
+  color: var(--color-text);
+  margin: 0;
+}
