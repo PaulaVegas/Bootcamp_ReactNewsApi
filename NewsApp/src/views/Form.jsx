@@ -31,8 +31,9 @@ function Form() {
 
   return (
     <section>
-      <h2>Create News</h2>
+      
       <form onSubmit={handleSubmit}>
+        <h2>Create News</h2>
         <label>
           Title:
           <input type="text" name="title" value={formData.title} onChange={handleChange} required />
@@ -53,7 +54,7 @@ function Form() {
           <textarea name="content" value={formData.content} onChange={handleChange} required />
         </label>
 
-        <button type="submit">Publish</button>
+        <button className="button" type="submit">Publish</button>
       </form>
     </section>
   );
