@@ -1,23 +1,28 @@
-import { useContext } from 'react';
-import { NewsContext } from '../context/NewsContext';
+import { useEffect, useState } from 'react';
 
 function ListNews() {
-  const { articles, loading } = useContext(NewsContext);
+  const [news, setNews] = useState([]);
+
+  useEffect(() => {
+    const storedNews = JSON.parse(localStorage.getItem('news')) || [];
+    setNews(storedNews);
+  }, []);
 
   return (
     <section>
-      <h2>News List</h2>
-      {loading ? (
-        <p>Loading news...</p>
+      <h2>Self-published articles</h2><br />
+
+      {news.length === 0 ? (
+        <p>No articles created yet.</p>
       ) : (
         <ul className="news-list">
-          {articles.map((article) => (
-            <li key={article.url} className="news-item">
+          {news.map((article) => (
+            <li key={article.id} className="news-item">
               <h3>{article.title}</h3>
-              <p>{article.abstract}</p>
-              <a href={article.url} target="_blank" rel="noopener noreferrer">
-                Read more
-              </a>
+              <p><strong>Author:</strong> {article.author}</p>
+              <p><strong>Category:</strong> {article.category || 'Uncategorized'}</p>
+              <p>{article.content}</p>
+              <small><em>{new Date(article.date).toLocaleString()}</em></small>
             </li>
           ))}
         </ul>

@@ -6,13 +6,13 @@ function Home() {
 
   return (
     <section>
-      <h1>Top Stories</h1>
+      <h1>Top NYT Stories</h1>
 
       {loading ? (
         <p>Loading news...</p>
       ) : (
         <div className="home-news">
-          {articles.slice(0, 3).map((article) => (
+          {articles.slice(0, 9).map((article) => (
             <div key={article.url} className="news-preview">
               <h3>{article.title}</h3>
               <p>{article.abstract}</p>

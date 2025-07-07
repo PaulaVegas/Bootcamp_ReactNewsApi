@@ -36,7 +36,7 @@ function Form() {
     <section>
       
       <form onSubmit={handleSubmit}>
-        <h2>Create News</h2>
+        <h2>Create your own article!</h2>
         <label>
           Title:
           <input type="text" name="title" value={formData.title} onChange={handleChange} required />
