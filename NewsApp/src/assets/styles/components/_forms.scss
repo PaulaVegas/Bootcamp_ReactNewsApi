@@ -22,20 +22,5 @@ form {
     color: var(--color-primary-dark);
     margin-bottom: 1rem;
   }
-  button {
-    padding: 0.5rem 1rem;
-    background-color: var(--color-primary);
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 1rem;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
 
-    &:hover {
-      background-color: var(--color-secondary);
-      transition: background-color 0.3s ease;
-    }
-  }
 }

@@ -26,7 +26,10 @@ function Form() {
     const updatedNews = [...existing, { ...formData, id: crypto.randomUUID(), date: new Date().toISOString() }];
 
     localStorage.setItem('news', JSON.stringify(updatedNews));
-    navigate('/list');
+    setTimeout(() => {
+      alert('Article created successfully!');
+      navigate('/list');
+    }, 1000);
   };
 
   return (

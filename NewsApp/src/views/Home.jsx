@@ -12,7 +12,7 @@ function Home() {
         <p>Loading news...</p>
       ) : (
         <div className="home-news">
-          {articles.slice(0, 6).map((article) => (
+          {articles.slice(0, 3).map((article) => (
             <div key={article.url} className="news-preview">
               <h3>{article.title}</h3>
               <p>{article.abstract}</p>
